@@ -1,0 +1,14 @@
+{# src\symfony_cinema\CinemaBundle\Resources\views\film\list.html.twig #}
+<h1>{{ titre }}</h1>
+
+<ul class="liste">
+    {% for film in films %}
+        <li>
+            <h2>{{ film.titre }}</h2>
+                <span>{{ film.realisateur }}</span>
+        </li>
+        <p>{{ film.synopsis }}</p>
+        <p>{{ film.genre }}</p>
+        <span>{{ film.datedesortie }}</span>
+    {% endfor %}
+</ul>

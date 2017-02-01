@@ -36,9 +36,9 @@ class Film
     private $synopsis;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="date_de_sortie", type="datetime")
+     * @ORM\Column(name="date_de_sortie", type="string", length=255)
      */
     private $dateDeSortie;
 
@@ -118,7 +118,7 @@ class Film
     /**
      * Set dateDeSortie
      *
-     * @param \DateTime $dateDeSortie
+     * @param string $dateDeSortie
      *
      * @return Film
      */
@@ -132,7 +132,7 @@ class Film
     /**
      * Get dateDeSortie
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDateDeSortie()
     {
