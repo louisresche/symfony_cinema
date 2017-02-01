@@ -1,0 +1,8 @@
+symfony.cinema_cinema:
+    resource: "@symfony_cinemaCinemaBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
