@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="page_accueil")
      */
     public function indexAction()
     {
@@ -16,7 +16,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/Films")
+     * @Route("/Films", name="page_films")
      */
     public function listAction()
     {
@@ -33,7 +33,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/Film/{id}", requirements={"id": "\d+"})
+     * @Route("/Film/{id}", requirements={"id": "\d+"}, name="page_film")
      */
     public function showAction($id)
     {
