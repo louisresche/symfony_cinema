@@ -1,0 +1,55 @@
+{# src\symfony_cinema\CinemaBundle\Resources\views\Realisateur\list.html.twig #}
+
+{% extends 'symfony_cinemaCinemaBundle::layout.html.twig' %}
+
+
+{% block body %}
+
+    <h1>{{ titre }}</h1>
+
+    <ul class="liste">
+
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <p class="lead">Cinéma</p>
+                    <div class="list-group">
+                        <a href="{{ path('page_films') }}" class="list-group-item">Films</a>
+                        <a href="{{ path('page_realisateurs') }}" class="list-group-item active">Réalisateurs</a>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+
+                    <h2>Liste des films</h2>
+
+                    <br/>
+                    {% for realisateur in realisateurs %}
+                        <div class="well">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <strong>{{ realisateur.prenom }} {{ realisateur.nom }}</strong> {{ realisateur.datedenaissance|date("d/m/Y") }}<br/>
+                                    <br/>
+                                    <p>{{ realisateur.description }}</p>
+                                    <hr/>
+                                    <div class="text-right">
+                                        <a href="cinema-films-realisateur.html" class="btn btn-success">Voir ses
+                                            films</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </ul>
+{% endblock %}

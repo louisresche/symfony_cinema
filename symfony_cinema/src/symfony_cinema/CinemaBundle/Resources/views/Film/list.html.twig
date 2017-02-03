@@ -1,14 +1,66 @@
 {# src\symfony_cinema\CinemaBundle\Resources\views\film\list.html.twig #}
-<h1>{{ titre }}</h1>
 
-<ul class="liste">
-    {% for film in films %}
-        <li>
-            <h2><a href="{{ path('page_film', {'id': film.id}) }}">{{ film.titre }}</a></h2>
-                <span>{{ film.realisateur }}</span>
-        </li>
-        <p>{{ film.synopsis }}</p>
-        <p>{{ film.genre }}</p>
-        <span>{{ film.datedesortie }}</span>
-    {% endfor %}
-</ul>
+{% extends 'symfony_cinemaCinemaBundle::layout.html.twig' %}
+
+
+{% block body %}
+
+    <h1>{{ titre }}</h1>
+
+    <ul class="liste">
+
+
+
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <p class="lead">Cinéma</p>
+                        <div class="list-group">
+                            <a href="{{ path('page_films') }}" class="list-group-item active">Films</a>
+                            <a href="{{ path('page_realisateurs') }}" class="list-group-item">Réalisateurs</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9">
+
+                        <h2>Liste des films</h2>
+
+                        <br/>
+                        {% for film in films %}
+                        <div class="thumbnail">
+                            <div class="caption-full">
+                                <h4 class="pull-right">{{ film.genre }}</h4>
+                                <h4>{{ film.titre }}</h4>
+                                <p>{{ film.synopsis }}</p>
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">sorti le {{ film.datedesortie }}</p>
+                                <p>Réalisé par : <a href="cinema-films-realisateur.html">{{ film.realisateur }}</a></p>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </ul>
+{% endblock %}
