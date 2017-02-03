@@ -51,6 +51,16 @@ class Personne
 
 
     /**
+     * @ORM\OneToMany(targetEntity="Film", mappedBy="Personne")
+     */
+    private $films;
+
+    public function __toString()
+    {
+        return $this->prenom. ' ' .$this->nom;
+    }
+
+    /**
      * Get id
      *
      * @return int

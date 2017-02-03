@@ -1,0 +1,10 @@
+{# src\Devschool\AdminBundle\Resources\views\Film\list.html.twig #}
+<h1>Liste des Realisateurs :</h1>
+<ul>
+    {% for realisateur in realisateurs %}
+        <li> <a href="{{ path('admin_realisateur_modif', {'id': realisateur.id}) }}">{{ realisateur.nom }}</a>
+            <a href="{{ path('admin_realisateur_supprimer', {'id': realisateur.id}) }}">(x)</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{{ path('admin_realisateur_ajout') }}">Ajouter</a>

@@ -28,6 +28,11 @@ class Genre
      */
     private $nom;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Film", mappedBy="genre")
+     */
+    private $films;
+
 
     /**
      * Get id

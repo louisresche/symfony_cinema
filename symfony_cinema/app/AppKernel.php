@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
             new symfony_cinema\CinemaBundle\symfony_cinemaCinemaBundle(),
+            new symfony_cinema\AdminBundle\symfony_cinemaAdminBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

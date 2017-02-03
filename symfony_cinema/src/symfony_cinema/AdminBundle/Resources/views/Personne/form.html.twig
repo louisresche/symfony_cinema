@@ -1,0 +1,13 @@
+{# src\symfony_cinema\AdminBundle\Resources\views\Film\form.html.twig #}
+{{ form_start(form) }}
+{{ form_label(form.nom) }} {{ form_widget(form.nom) }}
+<br>
+{{ form_label(form.prenom) }} {{ form_widget(form.prenom) }}
+<br>
+
+
+
+{{ form_end(form) }}
+<p><a href="{{ path('admin_realisateur_liste') }}">Retour</a></p>
+
+

@@ -42,19 +42,17 @@ class Film
      */
     private $dateDeSortie;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="realisateur", type="string", length=255)
-     */
-    private $realisateur;
+
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="genre", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Genre", inversedBy="films")
      */
     private $genre;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Personne", inversedBy="films")
+     */
+    private $realisateur;
 
 
     /**

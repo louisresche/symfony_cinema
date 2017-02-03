@@ -1,0 +1,17 @@
+{# src\symfony_cinema\AdminBundle\Resources\views\Film\form.html.twig #}
+{{ form_start(form) }}
+{{ form_label(form.titre) }} {{ form_widget(form.titre) }}
+<br>
+{{ form_label(form.synopsis) }} {{ form_widget(form.synopsis) }}
+<br>
+{{ form_label(form.realisateur) }} {{ form_widget(form.realisateur) }}
+<br>
+{{ form_label(form.genre) }} {{ form_widget(form.genre) }}
+<br>
+{{ form_label(form.date_de_sortie) }} {{ form_widget(form.date_de_sortie) }}
+<br>
+
+{{ form_end(form) }}
+<p><a href="{{ path('admin_film_liste') }}">Retour</a></p>
+
+
