@@ -1,9 +1,18 @@
 {# src\symfony_cinema\AdminBundle\Resources\views\Film\list.html.twig #}
-<h1>Liste des films :</h1>
-<ul>
+{% extends 'symfony_cinemaAdminBundle::layout.html.twig' %}
+
+{% block body %}
+
+
+    <h1>Liste des films :</h1>
+    <ul class="list-group">
+        <li class=" alert alert-info"><a href="{{ path('admin_film_ajout') }}">Ajouter un film</a></li>
+    </ul>
     {% for film in films %}
-        <li><a href="{{ path('admin_film_modif', {'id': film.id}) }}">{{ film.titre }}</a>
-        <a href="{{ path('admin_film_supprimer', {'id': film.id}) }}">(x)</a></li>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-warning"><a href="{{ path('admin_film_modif', {'id': film.id}) }}">{{ film.titre }} (Modifier)</a></li>
+            <li class="list-group-item list-group-item-danger"><a href="{{ path('admin_film_supprimer', {'id': film.id}) }}">Supprimer</a></li>
+        </ul>
     {% endfor %}
-</ul>
-<a href="{{ path('admin_film_ajout') }}">Ajouter</a>
+
+{% endblock %}

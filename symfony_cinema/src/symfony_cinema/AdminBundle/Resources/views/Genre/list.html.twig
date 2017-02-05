@@ -1,10 +1,18 @@
-{# src\Devschool\AdminBundle\Resources\views\Film\list.html.twig #}
-<h1>Liste des genres :</h1>
-<ul>
+{# src\Devschool\AdminBundle\Resources\views\Genre\list.html.twig #}
+
+{% extends 'symfony_cinemaAdminBundle::layout.html.twig' %}
+
+{% block body %}
+
+    <h1>Liste des genres :</h1>
+    <ul class="list-group">
+        <li class=" alert alert-info"><a href="{{ path('admin_genre_ajout') }}">Ajouter un genre</a></li>
+    </ul>
     {% for genre in genres %}
-        <li><a href="{{ path('admin_genre_modif', {'id': genre.id}) }}">{{ genre.nom }}</a>
-            <a href="{{ path('admin_genre_supprimer', {'id': genre.id}) }}">(x)</a>
-        </li>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-warning"><a href="{{ path('admin_genre_modif', {'id': genre.id}) }}">{{ genre.nom }} (Modifier)</a></li>
+            <li class="list-group-item list-group-item-danger"><a href="{{ path('admin_genre_supprimer', {'id': genre.id}) }}">Supprimer</a></li>
+        </ul>
     {% endfor %}
-</ul>
-<a href="{{ path('admin_genre_ajout') }}">Ajouter</a>
+
+{% endblock %}

@@ -33,6 +33,10 @@ class Genre
      */
     private $films;
 
+    public function __toString()
+    {
+        return $this->nom;
+    }
 
     /**
      * Get id

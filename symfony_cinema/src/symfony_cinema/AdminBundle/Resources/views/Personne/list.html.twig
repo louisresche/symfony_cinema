@@ -1,10 +1,18 @@
 {# src\Devschool\AdminBundle\Resources\views\Film\list.html.twig #}
+
+{% extends 'symfony_cinemaAdminBundle::layout.html.twig' %}
+
+{% block body %}
+
 <h1>Liste des Realisateurs :</h1>
-<ul>
+    <ul class="list-group">
+        <li class=" alert alert-info"><a href="{{ path('admin_realisateur_ajout') }}">Ajouter un realisateur</a></li>
+    </ul>
     {% for realisateur in realisateurs %}
-        <li> <a href="{{ path('admin_realisateur_modif', {'id': realisateur.id}) }}">{{ realisateur.nom }}</a>
-            <a href="{{ path('admin_realisateur_supprimer', {'id': realisateur.id}) }}">(x)</a>
-        </li>
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-warning"><a href="{{ path('admin_realisateur_modif', {'id': realisateur.id}) }}">{{ realisateur.nom }} (Modifier)</a></li>
+            <li class="list-group-item list-group-item-danger"><a href="{{ path('admin_realisateur_supprimer', {'id': realisateur.id}) }}">Supprimer</a></li>
+        </ul>
     {% endfor %}
-</ul>
-<a href="{{ path('admin_realisateur_ajout') }}">Ajouter</a>
+
+{% endblock %}
